@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/ic_myfiles"
+        android:id="@+id/miItem1"
+        android:title="My Files"
+        />
+
+    <item
+        android:icon="@drawable/ic_sharedwm"
+        android:id="@+id/miItem2"
+        android:title="Shared With Me"
+        />
+
+    <item
+        android:icon="@drawable/ic_starred"
+        android:id="@+id/miItem3"
+        android:title="Starred"
+        />
+
+    <item
+        android:icon="@drawable/ic_recent"
+        android:id="@+id/miItem4"
+        android:title="Recent"
+        />
+
+    <item
+        android:icon="@drawable/ic_offline"
+        android:id="@+id/miItem5"
+        android:title="Offline"
+        />
+
+    <item
+        android:icon="@drawable/ic_uploads"
+        android:id="@+id/miItem6"
+        android:title="Uploads"
+        />
+
+    <item
+        android:icon="@drawable/ic_backups"
+        android:id="@+id/miItem7"
+        android:title="Backups"
+        />
+
+</menu>
