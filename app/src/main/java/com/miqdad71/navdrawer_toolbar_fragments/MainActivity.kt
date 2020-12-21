@@ -5,6 +5,11 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.fragment.app.Fragment
+import com.miqdad71.starworks.view.fragments.FirstFragment
+import com.miqdad71.starworks.view.fragments.FourthFragment
+import com.miqdad71.starworks.view.fragments.SecondFragment
+import com.miqdad71.starworks.view.fragments.ThirdFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,19 +26,30 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        val firstFragment = FirstFragment()
+        val secondFragment = SecondFragment()
+        val thirdFragment = ThirdFragment()
+        val fourthFragment = FourthFragment()
+
+        setCurrentFragment(firstFragment)
+
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.miItem1 -> Toast.makeText(applicationContext,
-                    "Click Item 1", Toast.LENGTH_SHORT).show()
-                R.id.miItem2 -> Toast.makeText(applicationContext,
-                    "Click Item 2", Toast.LENGTH_SHORT).show()
-                R.id.miItem3 -> Toast.makeText(applicationContext,
-                    "Click Item 3", Toast.LENGTH_SHORT).show()
+                R.id.miItem1 -> setCurrentFragment(firstFragment)
+                R.id.miItem2 -> setCurrentFragment(secondFragment)
+                R.id.miItem3 -> setCurrentFragment(thirdFragment)
+                R.id.miItem4 -> setCurrentFragment(fourthFragment)
             }
             true
         }
 
     }
+
+    private fun setCurrentFragment(fragment: Fragment) =
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.flFragment, fragment)
+                commit()
+            }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toogle.onOptionsItemSelected(item)){
